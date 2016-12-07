@@ -4,42 +4,64 @@ function setts_update(){
     $$.get('http://boiler.kotbegemot/json_db.php',{nc: Math.random()},function(jsonText){
         console.log("JSON got");
         
+        var sliders = {
+//            SET0: {
+//                min: 50,
+//                max: 100
+//            }
+        };
+        
         var settsList = myApp.virtualList('#setts-list', {
             items: [],
             renderItem: function(index, item){
                 
-                switch(item.type){
+                var tp = item.type;
+                var min = 0;
+                var max = 100;
+                if(item.name in sliders){
+                    console.log(item.name+' in sliders');
+                    tp = 'slider';
+                    min = sliders[item.name].min;
+                    max = sliders[item.name].max;
+                }else{
+                    console.log(item.name+' not in sliders');
+                }
+                
+                switch(tp){
                     case 'num':
-                        return '<li class="item-content">' +
+                        return '<li><div class="item-content">' +
                           '<div class="item-inner">' +
-                              '<div class="item-title">' + item.descr + '</div>' +
-                              '<div class="item-after"><div class="item-input"><input type="number" class="param-elem" id="'+item.name+'" name="'+item.name+'" value="'+item.value+'"></div></div>' +
+                              '<div class="item-title label" style="width: 80%">' + item.descr + '</div>' +
+                              '<div class="item-input" style="width: 20%"><input type="number" class="param-elem" id="'+item.name+'" name="'+item.name+'" value="'+item.value+'"></div>' +
                           '</div>' +
-                       '</li>';
+                       '</div></li>';
                     case 'bool':
-                        return '<li class="item-content">' +
+                        return '<li><div class="item-content">' +
                           '<div class="item-inner">' +
-                              '<div class="item-title">' + item.descr + '</div>' +
-                              '<div class="item-after"><div class="item-input"><label class="label-switch"><input type="checkbox" class="param-elem" id="'+item.name+'" name="'+item.name+'" value="checkbox" '+
+                              '<div class="item-title label" style="width: 80%">' + item.descr + '</div>' +
+                              '<div class="item-input" style="width: 20%"><label class="label-switch"><input type="checkbox" class="param-elem" id="'+item.name+'" name="'+item.name+'" value="checkbox" '+
                               (item.value==1 ? 'checked' : '') +
                               '><div class="checkbox"></div></label></div>' +
-//                              '<div class="item-after"><div class="item-input"><select class="param-elem" id="'+item.name+'" name="'+item.name+'" value="'+item.value+'">' +
-//                                '<option value="0">Выкл</option>' +
-//                                '<option value="1">Вкл</option>' +
-//                              '</select></div></div>' +
                           '</div>' +
-                       '</li>';
+                       '</div></li>';
                     case 'selprm':
-                        return '<li class="item-content">' +
+                        return '<li><div class="item-content">' +
                           '<div class="item-inner">' +
-                              '<div class="item-title">' + item.descr + '</div>' +
-                              '<div class="item-after"><div class="item-input"><select class="param-elem" id="'+item.name+'" name="'+item.name+'">' +
+                              '<div class="item-title label" style="width: 80%">' + item.descr + '</div>' +
+                              '<div class="item-input" style="width: 20%"><select class="param-elem" id="'+item.name+'" name="'+item.name+'">' +
                                 '<option value="1">Котел</option>' +
                                 '<option value="2">Обратка</option>' +
                                 '<option value="3">Система</option>' +
-                              '</select></div></div>' +
+                              '</select></div>' +
                           '</div>' +
-                       '</li>';
+                       '</div></li>';
+                    case 'slider':
+                        return '<li><div class="item-content">' +
+                          '<div class="item-inner">' +
+                              '<div class="item-title label">' + item.descr + '</div>' +
+                              '<div class="item-input"><div class="range-slider"><input type="range" min="'+min+'" max="'+max+'" value="'+item.value+'" step="1"></div></div>' +
+                          '</div>' +
+                       '</div></li>';
                     default:   
                         return '<li class="item-content">' +
                           '<div class="item-inner">' +

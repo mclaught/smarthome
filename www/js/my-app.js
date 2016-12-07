@@ -166,7 +166,7 @@ function update(){
         var N = 0;    
         if(Array.isArray(obj.boiler)){
             for(var i=0; i<obj.boiler.length; i++){
-                if(obj.boiler[i].icon != ''){
+                if(obj.boiler[i].name.substring(0,3) == 'PRM' || obj.boiler[i].name == 'TIM'){
                     
                     if(replace)
                         paramsList.replaceItem(N++,obj.boiler[i]);
