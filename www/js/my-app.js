@@ -182,7 +182,8 @@ function update(){
                              myApp.addNotification({
                                 title: 'Котел',
                                 message: 'Закончилось топливо!!!',
-                                closeOnClick: true
+                                closeOnClick: true,
+                                hold: 5000
                             });    
                             
 //                            var snd = new Audio("sound/Ring.wav");

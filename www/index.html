@@ -18,6 +18,7 @@
 
     <link rel="stylesheet" href="lib/framework7/css/framework7.material.min.css">
     <link rel="stylesheet" href="lib/framework7/css/framework7.material.colors.min.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7-icons.css">
     <link rel="stylesheet" href="jqwidgets/styles/jqx.base.css" type="text/css" />
 
     <link rel="stylesheet" href="css/styles.css">
@@ -34,25 +35,70 @@
         <div class="content-block">
             <div class="list-block left-menu">
             <ul>
-                <li><a href="index.html" class="back item-link close-panel list-button" data-force="true">Состояние</a></li>
-                <li><a href="graph.html" class="back item-link close-panel list-button" data-force="true">Графики</a></li>
+                <li>
+                    <div class="item-content">
+                        <div class="item-media">
+                            <i class="f7-icons">eye</i>
+                        </div>
+                        <div class="item-inner">
+                            <div class="item-title">
+                                <a href="index.html" class="back item-link close-panel list-button" data-force="true">Состояние</a>
+                            </div>
+                            <div class="item-after">
+                                <i class="f7-icons">chevron_right</i>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="item-content">
+                        <div class="item-media">
+                            <i class="f7-icons">graph_round</i>
+                        </div>
+                        <div class="item-inner">
+                            <div class="item-title">
+                                <a href="graph.html" class="back item-link close-panel list-button" data-force="true">Графики</a>
+                            </div>
+                            <div class="item-after">
+                                <i class="f7-icons">chevron_right</i>
+                            </div>
+                        </div>
+                    </div>
+                </li>
                 <!--<li><a href="#" class="item-link close-panel list-button" data-force="true">Таблица</a></li>-->
-                <li><a href="settings.html" class="back item-link close-panel list-button" data-force="true">Настройки</a></li>
+                <li>
+                    <div class="item-content">
+                        <div class="item-media">
+                            <i class="f7-icons">gear</i>
+                        </div>
+                        <div class="item-inner">
+                            <div class="item-title">
+                                <a href="settings.html" class="back item-link close-panel list-button" data-force="true">Настройки</a>
+                            </div>
+                            <div class="item-after">
+                                <i class="f7-icons">chevron_right</i>
+                            </div>
+                        </div>
+                    </div>
+                </li>
             </ul>
             </div>
         </div>
     </div>
     
-    <div class="panel panel-right panel-reveal bg-white">
+    <div class="panel panel-right panel-reveal">
         <div class="content-block-title">Настройки графиков</div>
         <div class="content-block">
             <form id="graph-params" class="list-block">
                 <ul>
                     <li>
                         <div class="item-content">
+                            <div class="item-media">
+                                <i class="f7-icons">filter</i>
+                            </div>
                             <div class="item-inner">
-                                <div class="item-title label">Глубина фильтрации</div>
-                                <div class="item-input">
+                                <!--<div class="item-title label" style="width: 80%">Глубина фильтрации</div>-->
+                                <div class="item-input item-after">
                                     <input type="number" value="0" id="fltN" name="fltN">
                                 </div>
                             </div>
@@ -60,8 +106,11 @@
                     </li>
                     <li>
                         <div class="item-content">
+                            <div class="item-media">
+                                <i class="f7-icons">graph_square</i>
+                            </div>
                             <div class="item-inner">
-                                <div class="item-title label">Графики</div>
+                                <!--<div class="item-title label">Графики</div>-->
                                 <div class="item-input">
                                     <select id="graph-select" name="graphselect" multiple="multiple">
                                         <option value="0">Котел</option>
@@ -78,8 +127,11 @@
                     </li>
                     <li>
                         <div class="item-content">
+                            <div class="item-media">
+                                <i class="f7-icons">timer</i>
+                            </div>
                             <div class="item-inner">
-                                <div class="item-title label">Период</div>
+                                <!--<div class="item-title label" style="width: 80%">Период</div>-->
                                 <div class="item-input">
                                     <input type="number" value="5" id="period" name="period">
                                 </div>
@@ -158,9 +210,9 @@
             <div class="toolbar">
                 <div class="toolbar-inner">
                     <a href="#" class="button active" id="btn-update"><span id="update-time">Обновить</span></a>
-<!--                    <div class="right">
-                        <a href="#" class="link icon-only open-panel" data-panel="right"><i class="icon icon-forward"></i></a>
-                    </div>-->
+                    <div class="right">
+                        <a href="#" class="link icon-only open-panel" data-panel="right"><i class="f7-icons">gear</i></a>
+                    </div>
                 </div>
             </div>
         </div>
