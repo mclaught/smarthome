@@ -31,14 +31,14 @@ function setts_update(){
                     case 'num':
                         return '<li><div class="item-content">' +
                           '<div class="item-inner">' +
-                              '<div class="item-title label" style="width: 80%">' + item.descr + '</div>' +
+                              '<div class="item-title floating-label" style="width: 80%">' + item.descr + '</div>' +
                               '<div class="item-input" style="width: 20%"><input type="number" class="param-elem" id="'+item.name+'" name="'+item.name+'" value="'+item.value+'"></div>' +
                           '</div>' +
                        '</div></li>';
                     case 'bool':
                         return '<li><div class="item-content">' +
                           '<div class="item-inner">' +
-                              '<div class="item-title label" style="width: 80%">' + item.descr + '</div>' +
+                              '<div class="item-title floating-label" style="width: 80%">' + item.descr + '</div>' +
                               '<div class="item-input" style="width: 20%"><label class="label-switch"><input type="checkbox" class="param-elem" id="'+item.name+'" name="'+item.name+'" value="checkbox" '+
                               (item.value==1 ? 'checked' : '') +
                               '><div class="checkbox"></div></label></div>' +
@@ -47,7 +47,7 @@ function setts_update(){
                     case 'selprm':
                         return '<li><div class="item-content">' +
                           '<div class="item-inner">' +
-                              '<div class="item-title label" style="width: 80%">' + item.descr + '</div>' +
+                              '<div class="item-title floating-label" style="width: 80%">' + item.descr + '</div>' +
                               '<div class="item-input" style="width: 20%"><select class="param-elem" id="'+item.name+'" name="'+item.name+'">' +
                                 '<option value="1">Котел</option>' +
                                 '<option value="2">Обратка</option>' +

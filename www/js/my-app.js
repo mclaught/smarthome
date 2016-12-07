@@ -2,7 +2,9 @@ var autoupdate = true;
 var last_fuel_state = false;
 
 // Initialize app
-var myApp = new Framework7();
+var myApp = new Framework7({
+    swipePanel: 'both'
+});
 
 
 // If we need to use custom DOM library, let's save it to $$ variable:
@@ -11,7 +13,7 @@ var $$ = Dom7;
 // Add view
 var mainView = myApp.addView('.view-main', {
     // Because we want to use dynamic navbar, we need to enable it for this view:
-    dynamicNavbar: true,
+    dynamicNavbar: false,
     domCache: true
 });
 
@@ -179,7 +181,8 @@ function update(){
                         if (!last_fuel_state && fuel_state) {
                              myApp.addNotification({
                                 title: 'Котел',
-                                message: 'Закончилось топливо!!!'
+                                message: 'Закончилось топливо!!!',
+                                closeOnClick: true
                             });    
                             
 //                            var snd = new Audio("sound/Ring.wav");

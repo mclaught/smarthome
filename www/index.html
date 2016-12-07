@@ -16,8 +16,8 @@
         http://www.idangero.us/framework7/tutorials/maintain-both-ios-and-material-themes-in-single-app.html
      -->
 
-    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
-    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7.material.min.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7.material.colors.min.css">
     <link rel="stylesheet" href="jqwidgets/styles/jqx.base.css" type="text/css" />
 
     <link rel="stylesheet" href="css/styles.css">
@@ -34,10 +34,10 @@
         <div class="content-block">
             <div class="list-block left-menu">
             <ul>
-                <li><a href="index.html" class="back item-link close-panel list-button bg-black color-white">Состояние</a></li>
-                <li><a href="graph.html" class="item-link close-panel list-button bg-black color-white">Графики</a></li>
-                <li><a href="#" class="item-link close-panel list-button bg-black color-white">Таблица</a></li>
-                <li><a href="settings.html" class="item-link close-panel list-button bg-black color-white">Настройки</a></li>
+                <li><a href="index.html" class="back item-link close-panel list-button">Состояние</a></li>
+                <li><a href="graph.html" class="back item-link close-panel list-button">Графики</a></li>
+                <li><a href="#" class="item-link close-panel list-button">Таблица</a></li>
+                <li><a href="settings.html" class="back item-link close-panel list-button">Настройки</a></li>
             </ul>
             </div>
         </div>
@@ -102,14 +102,14 @@
             <div class="navbar">
                 <div class="navbar-inner">
                     <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-                    <div class="left">
+                    <div class="right">
                         <!--
                           Right link contains only icon - additional "icon-only" class
                           Additional "open-panel" class tells app to open panel when we click on this link
                         -->
                         <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
                     </div>
-                    <div class="center sliding">Состояние</div>
+                    <div class="center">Отопление</div>
                 </div>
             </div>
             <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
@@ -158,6 +158,9 @@
             <div class="toolbar">
                 <div class="toolbar-inner">
                     <a href="#" class="button active" id="btn-update"><span id="update-time">Обновить</span></a>
+<!--                    <div class="right">
+                        <a href="#" class="link icon-only open-panel" data-panel="right"><i class="icon icon-forward"></i></a>
+                    </div>-->
                 </div>
             </div>
         </div>
