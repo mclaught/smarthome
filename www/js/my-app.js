@@ -148,13 +148,14 @@ function update(){
 
         var paramsList = myApp.virtualList('#params-list',{
             items: [],
+            height: 50,
             template: '<li class="item-content">' +
                           '<div class="item-media"><img src="images/{{icon}}"></div>' +
                           '<div class="item-inner">' +
                               '<div class="item-title">{{descr}}</div>' +
                               '<div class="item-after">{{display}}</div>' +
                           '</div>' +
-                       '</li>'
+                       '</li>'   
         });
 
         var obj = JSON.parse(jsonText);

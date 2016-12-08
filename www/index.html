@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="lib/framework7/css/framework7.material.colors.min.css">
     <link rel="stylesheet" href="lib/framework7/css/framework7-icons.css">
     <link rel="stylesheet" href="jqwidgets/styles/jqx.base.css" type="text/css" />
+    <link rel="stylesheet" href="f7_3d/framework7.3dpanels.css" type="text/css" />
 
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -33,7 +34,7 @@
     
     <!-- Left panel with reveal effect-->
     <div class="panel panel-left panel-reveal">
-        <div class="content-block bg-blue">
+        <div class="content-block">
             <img src="images/ic_launcher_96.png">
         </div>
         <div class="content-block">
@@ -49,7 +50,7 @@
                                 <a href="index.html" class="back item-link close-panel list-button" data-force="true">Состояние</a>
                             </div>
                             <div class="item-after">
-                                <i class="f7-icons">chevron_right</i>
+                                <i class="f7-icons color-white">chevron_right</i>
                             </div>
                         </div>
                     </div>
@@ -64,7 +65,7 @@
                                 <a href="graph.html" class="back item-link close-panel list-button" data-force="true">Графики</a>
                             </div>
                             <div class="item-after">
-                                <i class="f7-icons">chevron_right</i>
+                                <i class="f7-icons color-white">chevron_right</i>
                             </div>
                         </div>
                     </div>
@@ -80,7 +81,7 @@
                                 <a href="settings.html" class="back item-link close-panel list-button" data-force="true">Настройки</a>
                             </div>
                             <div class="item-after">
-                                <i class="f7-icons">chevron_right</i>
+                                <i class="f7-icons color-white">chevron_right</i>
                             </div>
                         </div>
                     </div>
@@ -90,7 +91,7 @@
         </div>
     </div>
     
-    <div class="panel panel-right panel-reveal">
+    <div class="panel panel-right panel-reveal theme-black">
         <div class="content-block-title">Настройки графиков</div>
         <div class="content-block">
             <form id="graph-params" class="list-block">
@@ -103,7 +104,7 @@
                             <div class="item-inner">
                                 <!--<div class="item-title label" style="width: 80%">Глубина фильтрации</div>-->
                                 <div class="item-input item-after">
-                                    <input type="number" value="0" id="fltN" name="fltN">
+                                    <input type="number" value="0" id="fltN" name="fltN" style="color: white">
                                 </div>
                             </div>
                         </div>    
@@ -116,7 +117,7 @@
                             <div class="item-inner">
                                 <!--<div class="item-title label">Графики</div>-->
                                 <div class="item-input">
-                                    <select id="graph-select" name="graphselect" multiple="multiple">
+                                    <select id="graph-select" name="graphselect" multiple="multiple" style="color: white">
                                         <option value="0">Котел</option>
                                         <option value="1">Обратка</option>
                                         <option value="2">Вход</option>
@@ -137,7 +138,7 @@
                             <div class="item-inner">
                                 <!--<div class="item-title label" style="width: 80%">Период</div>-->
                                 <div class="item-input">
-                                    <input type="number" value="5" id="period" name="period">
+                                    <input type="number" value="5" id="period" name="period" style="color: white">
                                 </div>
                             </div>
                         </div>    
@@ -145,7 +146,7 @@
                 </ul>
             </form>
             <div class="content-block">
-                <a href="#" class="button set-graph-params">Установить</a>
+                <a href="#" class="button set-graph-params" style="color: white">Установить</a>
             </div>
         </div>
     </div>
@@ -231,6 +232,7 @@
     <script language="javascript" type="text/javascript" src="js/jquery.flot.js"></script>
     <script language="javascript" type="text/javascript" src="js/jquery.flot.time.js"></script>
     <script language="javascript" type="text/javascript" src="js/jquery.flot.selection.js"></script>
+    <script type="text/javascript" src="f7_3d/framework7.3dpanels.js"></script>
     <script type="text/javascript" src="js/my-app.js"></script>
     <script type="text/javascript" src="js/graph.js"></script>
     <script type="text/javascript" src="js/settings.js"></script>
