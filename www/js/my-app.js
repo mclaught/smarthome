@@ -204,7 +204,13 @@ function update(){
                             ticksMajor: 5,
                             ticksMinor: 1,
                             labels: 10,
-                            value: obj.boiler[i].value
+                            ranges: [{ startValue: -40, endValue: -10, style: { fill: '#0080ff', stroke: '#0080ff' }, endWidth: 5, startWidth: 1 },
+                                     { startValue: -10, endValue: 10, style: { fill: '#4bb648', stroke: '#4bb648' }, endWidth: 10, startWidth: 5 },
+                                     { startValue: 10, endValue: 40, style: { fill: '#ff8000', stroke: '#ff8000' }, endWidth: 13, startWidth: 10 }],
+                            value: obj.boiler[i].value,
+                            text: 'На улице, °C',
+                            labelsFont: '10pt Arial',
+                            textFont: '12pt Arial'
                         });
 
                     if(obj.boiler[i].name == "PRM1")
@@ -218,7 +224,13 @@ function update(){
                             ticksMajor: 5,
                             ticksMinor: 1,
                             labels: 10,
-                            value: obj.boiler[i].value
+                            ranges: [{ startValue: 20, endValue: 65, style: { fill: '#0080ff', stroke: '#0080ff' }, endWidth: 5, startWidth: 1 },
+                                     { startValue: 65, endValue: 90, style: { fill: '#4bb648', stroke: '#4bb648' }, endWidth: 10, startWidth: 5 },
+                                     { startValue: 90, endValue: 120, style: { fill: '#ff8000', stroke: '#ff8000' }, endWidth: 13, startWidth: 10 }],
+                            value: obj.boiler[i].value,
+                            text: 'Котел, °C',
+                            labelsFont: '10pt Arial',
+                            textFont: '12pt Arial'
                         });
                     }
 
@@ -232,7 +244,13 @@ function update(){
                             ticksMajor: 5,
                             ticksMinor: 1,
                             labels: 10,
-                            value: obj.boiler[i].value
+                            ranges: [{ startValue: 20, endValue: 50, style: { fill: '#0080ff', stroke: '#0080ff' }, endWidth: 5, startWidth: 1 },
+                                     { startValue: 50, endValue: 65, style: { fill: '#4bb648', stroke: '#4bb648' }, endWidth: 10, startWidth: 5 },
+                                     { startValue: 65, endValue: 120, style: { fill: '#ff8000', stroke: '#ff8000' }, endWidth: 13, startWidth: 10 }],
+                            value: obj.boiler[i].value,
+                            text: 'Обратка, °C',
+                            labelsFont: '10pt Arial',
+                            textFont: '12pt Arial'
                         });
 
                     if(obj.boiler[i].name == "PRM20")
@@ -245,7 +263,13 @@ function update(){
                             ticksMajor: 5,
                             ticksMinor: 1,
                             labels: 10,
-                            value: obj.boiler[i].value
+                            ranges: [{ startValue: 0, endValue: 40, style: { fill: '#0080ff', stroke: '#0080ff' }, endWidth: 5, startWidth: 1 },
+                                     { startValue: 40, endValue: 80, style: { fill: '#4bb648', stroke: '#4bb648' }, endWidth: 10, startWidth: 5 },
+                                     { startValue: 80, endValue: 100, style: { fill: '#ff8000', stroke: '#ff8000' }, endWidth: 13, startWidth: 10 }],
+                            value: obj.boiler[i].value,
+                            text: 'Циркуляция, %',
+                            labelsFont: '10pt Arial',
+                            textFont: '12pt Arial'
                         });
 
                     if(obj.boiler[i].name == "PRM21")
@@ -258,7 +282,13 @@ function update(){
                             ticksMajor: 5,
                             ticksMinor: 1,
                             labels: 10,
-                            value: obj.boiler[i].value
+                            ranges: [{ startValue: 0, endValue: 40, style: { fill: '#0080ff', stroke: '#0080ff' }, endWidth: 5, startWidth: 1 },
+                                     { startValue: 40, endValue: 80, style: { fill: '#4bb648', stroke: '#4bb648' }, endWidth: 10, startWidth: 5 },
+                                     { startValue: 80, endValue: 100, style: { fill: '#ff8000', stroke: '#ff8000' }, endWidth: 13, startWidth: 10 }],
+                            value: obj.boiler[i].value,
+                            text: 'Мощность, %',
+                            labelsFont: '10pt Arial',
+                            textFont: '12pt Arial'
                         });
 
                     if(obj.boiler[i].name == "TIM")
