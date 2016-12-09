@@ -106,3 +106,6 @@ $$('.set-graph-params').on('click',function(){
 //    alert(JSON.stringify(graph_params));
 });
 
+$(window).on('resize',function(){
+    update_graph(0,0,0,100);
+});

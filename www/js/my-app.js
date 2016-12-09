@@ -230,7 +230,7 @@ function update(){
                             value: obj.boiler[i].value,
                             text: 'Котел, °C',
                             labelsFont: '10pt Arial',
-                            textFont: '12pt Arial'
+                            textFont: '10pt Arial'
                         });
                     }
 
@@ -250,7 +250,7 @@ function update(){
                             value: obj.boiler[i].value,
                             text: 'Обратка, °C',
                             labelsFont: '10pt Arial',
-                            textFont: '12pt Arial'
+                            textFont: '10pt Arial'
                         });
 
                     if(obj.boiler[i].name == "PRM20")
@@ -269,7 +269,7 @@ function update(){
                             value: obj.boiler[i].value,
                             text: 'Циркуляция, %',
                             labelsFont: '10pt Arial',
-                            textFont: '12pt Arial'
+                            textFont: '10pt Arial'
                         });
 
                     if(obj.boiler[i].name == "PRM21")
@@ -288,7 +288,7 @@ function update(){
                             value: obj.boiler[i].value,
                             text: 'Мощность, %',
                             labelsFont: '10pt Arial',
-                            textFont: '12pt Arial'
+                            textFont: '10pt Arial'
                         });
 
                     if(obj.boiler[i].name == "TIM")
@@ -326,6 +326,10 @@ myApp.onPageInit('index', function (page) {
     setInterval(function(){
         update();
     },15000);
+});
+
+$(window).on('resize',function(){
+    update();
 });
 
 update();

@@ -23,9 +23,6 @@ function drawGauge(holder, options){
     if(options.endAngle < options.startAngle)
         options.endAngle += 360;
     
-    console.log("Holder: " + holder[0].id);
-    console.log("HTML: " + holder.html());
-    
     holder.empty();
     holder.html('<canvas></canvas>');
     console.log("HTML: " + holder.html());
@@ -35,11 +32,11 @@ function drawGauge(holder, options){
     var height = holder.height();
     $canv.attr('width',width);
     $canv.attr('height',height);//holder.height()
-    console.log("Width: " + $canv.width());
-    console.log("Height: " + $canv.height());
     
     var canvas = $canv[0];
     console.log("Canvas: " + canvas.tagName);
+    console.log("Width: " + $canv.width());
+    console.log("Height: " + $canv.height());
     
     var r = Math.min(width,height)/2-options.margin;
     var x0 = width/2;
