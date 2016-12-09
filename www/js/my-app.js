@@ -194,22 +194,72 @@ function update(){
                     }
                     
                     //Приборы
-//                    if(obj.boiler[i].name == "PRM0")
-//                        $('#gaugeOutside').jqxLinearGauge('value', obj.boiler[i].value);
-//
-//                    if(obj.boiler[i].name == "PRM1")
-//                    {
-//                        $('#gaugeBoiler').jqxGauge('value', obj.boiler[i].value);
-//                    }
-//
-//                    if(obj.boiler[i].name == "PRM2")
-//                        $('#gaugeBackway').jqxGauge('value', obj.boiler[i].value);
-//
-//                    if(obj.boiler[i].name == "PRM20")
-//                        $('#gaugeCirc').jqxGauge('value', obj.boiler[i].value);
-//
-//                    if(obj.boiler[i].name == "PRM21")
-//                        $('#gaugePower').jqxGauge('value', obj.boiler[i].value);
+                    if(obj.boiler[i].name == "PRM0")
+                        drawGauge($('#gaugeOutside'),{
+                            margin: 10,
+                            min: -40,
+                            max: 40,
+                            startAngle: 135,
+                            endAngle: 45,
+                            ticksMajor: 5,
+                            ticksMinor: 1,
+                            labels: 10,
+                            value: obj.boiler[i].value
+                        });
+
+                    if(obj.boiler[i].name == "PRM1")
+                    {
+                        drawGauge($('#gaugeBoiler'),{
+                            margin: 10,
+                            min: 20,
+                            max: 120,
+                            startAngle: 135,
+                            endAngle: 45,
+                            ticksMajor: 5,
+                            ticksMinor: 1,
+                            labels: 10,
+                            value: obj.boiler[i].value
+                        });
+                    }
+
+                    if(obj.boiler[i].name == "PRM2")
+                        drawGauge($('#gaugeBackway'),{
+                            margin: 10,
+                            min: 20,
+                            max: 120,
+                            startAngle: 135,
+                            endAngle: 45,
+                            ticksMajor: 5,
+                            ticksMinor: 1,
+                            labels: 10,
+                            value: obj.boiler[i].value
+                        });
+
+                    if(obj.boiler[i].name == "PRM20")
+                        drawGauge($('#gaugeCirc'),{
+                            margin: 10,
+                            min: 0,
+                            max: 100,
+                            startAngle: 135,
+                            endAngle: 45,
+                            ticksMajor: 5,
+                            ticksMinor: 1,
+                            labels: 10,
+                            value: obj.boiler[i].value
+                        });
+
+                    if(obj.boiler[i].name == "PRM21")
+                        drawGauge($('#gaugePower'),{
+                            margin: 10,
+                            min: 0,
+                            max: 100,
+                            startAngle: 135,
+                            endAngle: 45,
+                            ticksMajor: 5,
+                            ticksMinor: 1,
+                            labels: 10,
+                            value: obj.boiler[i].value
+                        });
 
                     if(obj.boiler[i].name == "TIM")
                         $('#update-time').text(obj.boiler[i].display);
