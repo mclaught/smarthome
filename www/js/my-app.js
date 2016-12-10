@@ -166,7 +166,8 @@ function update(){
         if(paramsList.items.length > 0)
             replace = true;
             
-        var N = 0;    
+        var N = 0; 
+        var boilerT = 20;
         if(Array.isArray(obj.boiler)){
             for(var i=0; i<obj.boiler.length; i++){
                 if(obj.boiler[i].name.substring(0,3) == 'PRM' || obj.boiler[i].name == 'TIM'){
@@ -204,9 +205,12 @@ function update(){
                             ticksMajor: 5,
                             ticksMinor: 1,
                             labels: 10,
-                            ranges: [{ startValue: -40, endValue: -10, style: { fill: '#0080ff', stroke: '#0080ff' }, endWidth: 5, startWidth: 1 },
-                                     { startValue: -10, endValue: 10, style: { fill: '#4bb648', stroke: '#4bb648' }, endWidth: 10, startWidth: 5 },
-                                     { startValue: 10, endValue: 40, style: { fill: '#ff8000', stroke: '#ff8000' }, endWidth: 13, startWidth: 10 }],
+                            ranges: [{ startValue: -40, endValue: -15, style: { fill: '#8000ff', stroke: '#8000ff' } },
+                                     { startValue: -15, endValue: 0, style: { fill: '#0080ff', stroke: '#0080ff' } },
+                                     { startValue: 0, endValue: 15, style: { fill: '#4bb648', stroke: '#4bb648' } },
+                                     { startValue: 15, endValue: 40, style: { fill: '#ffff00', stroke: '#ffff00' } }],
+//                                 ,
+//                                     { startValue: 10, endValue: 40, style: { fill: '#ff8000', stroke: '#ff8000' }, endWidth: 13, startWidth: 10 }
                             value: obj.boiler[i].value,
                             text: 'На улице, °C',
                             labelsFont: '10pt Arial',
@@ -214,7 +218,13 @@ function update(){
                         });
 
                     if(obj.boiler[i].name == "PRM1")
+                        boilerT = obj.boiler[i].value;
+                    if(obj.boiler[i].name == "PRM7")
                     {
+                        var Tust1 = obj.boiler[i].value-2;
+                        var Tust2 = Tust1+4;
+                        console.log("Tust1 = "+Tust1+" Tust2 = "+Tust2);
+                        
                         drawGauge($('#gaugeBoiler'),{
                             margin: 10,
                             min: 20,
@@ -226,8 +236,9 @@ function update(){
                             labels: 10,
                             ranges: [{ startValue: 20, endValue: 65, style: { fill: '#0080ff', stroke: '#0080ff' }, endWidth: 5, startWidth: 1 },
                                      { startValue: 65, endValue: 90, style: { fill: '#4bb648', stroke: '#4bb648' }, endWidth: 10, startWidth: 5 },
-                                     { startValue: 90, endValue: 120, style: { fill: '#ff8000', stroke: '#ff8000' }, endWidth: 13, startWidth: 10 }],
-                            value: obj.boiler[i].value,
+                                     { startValue: 90, endValue: 120, style: { fill: '#ff8000', stroke: '#ff8000' }, endWidth: 13, startWidth: 10 },
+                                     { startValue: Tust1, endValue: Tust2, style: { fill: '#80ff00', stroke: '#80ff00' }, endWidth: 13, startWidth: 10 }],
+                            value: boilerT,
                             text: 'Котел, °C',
                             labelsFont: '10pt Arial',
                             textFont: '10pt Arial'

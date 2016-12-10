@@ -46,8 +46,8 @@ function drawGauge(holder, options){
 //    ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     //Ring
-    ctx.shadowOffsetX = 0;
-    ctx.shadowOffsetY = 0;
+    ctx.shadowOffsetX = 1;
+    ctx.shadowOffsetY = 1;
     ctx.shadowBlur = 15;
     ctx.shadowColor = 'black';
     ctx.fillStyle = 'white';
@@ -55,10 +55,12 @@ function drawGauge(holder, options){
     
     ctx.beginPath();
     ctx.arc(x0,y0,r,0,2*Math.PI);
-    ctx.stroke();
+//    ctx.stroke();
     ctx.fill();
     
     //Ranges
+    ctx.shadowOffsetX = 0;
+    ctx.shadowOffsetY = 0;
     ctx.shadowBlur = 0;
     for(var i=0; i<options.ranges.length; i++){
         var rng = options.ranges[i];
@@ -72,13 +74,14 @@ function drawGauge(holder, options){
         ctx.moveTo(x0,y0);
         ctx.arc(x0,y0,r,a1,a2);
         ctx.closePath();
-        ctx.stroke();
+//        ctx.stroke();
         ctx.fill();
     }
 
     //Face
     ctx.strokeStyle = 'white';
-    var grd = ctx.createLinearGradient(x0-r*0.86,y0-r*0.86,x0+r*0.86,y0+r*0.86);    
+    var grdK = 0.7;
+    var grd = ctx.createLinearGradient(x0-r*grdK,y0-r*grdK,x0+r*grdK,y0+r*grdK);    
     grd.addColorStop(0,'#1e5799');
     grd.addColorStop(1,'#7db9e8');
 //    var ptr = ctx.createPattern(img,'repeat');
