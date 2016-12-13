@@ -51,6 +51,22 @@ $$(document).on('pageInit', '.page[data-page="about"]', function (e) {
 function update(){
     console.log("Start update");
     
+    if($(window).width() > 900){
+        $$('.gauge').removeClass('col-100');
+        $$('.gauge').removeClass('col-50');
+        $$('.gauge').addClass('col-33');
+    }
+    else if($(window).width() > 600){
+        $$('.gauge').removeClass('col-100');
+        $$('.gauge').removeClass('col-33');
+        $$('.gauge').addClass('col-50');
+    }
+    else{
+        $$('.gauge').removeClass('col-50');
+        $$('.gauge').removeClass('col-33');
+        $$('.gauge').addClass('col-100');
+    }
+    
 //    $('#gaugeBoiler').jqxGauge({
 //        width: 340,
 //        height: 340,
@@ -340,6 +356,7 @@ myApp.onPageInit('index', function (page) {
 });
 
 $(window).on('resize',function(){
+//    update();
     update();
 });
 
