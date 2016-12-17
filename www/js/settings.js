@@ -118,6 +118,7 @@ function setts_update(){
 
 myApp.onPageInit('settings',function(page){
 //    myApp.alert("Settings");
+    cur_page = 'settings';
     setts_update();
     
 //    $$('.btn-set-params').on('click',function(){

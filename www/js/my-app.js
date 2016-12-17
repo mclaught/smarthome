@@ -1,5 +1,6 @@
 var autoupdate = true;
 var last_fuel_state = false;
+var cur_page = 'index';
 
 // Initialize app
 var myApp = new Framework7({
@@ -49,6 +50,10 @@ $$(document).on('pageInit', '.page[data-page="about"]', function (e) {
 });
 
 function update(){
+    
+    if(cur_page != 'index')
+        return;
+    
     console.log("Start update");
     
     if($(window).width() > 900){
@@ -67,96 +72,6 @@ function update(){
         $$('.gauge').addClass('col-100');
     }
     
-//    $('#gaugeBoiler').jqxGauge({
-//        width: 340,
-//        height: 340,
-//        min: 20,
-//        max: 120,
-//        ranges: [{ startValue: 20, endValue: 65, style: { fill: '#0080ff', stroke: '#0080ff' }, endWidth: 5, startWidth: 1 },
-//                 { startValue: 65, endValue: 90, style: { fill: '#4bb648', stroke: '#4bb648' }, endWidth: 10, startWidth: 5 },
-//                 { startValue: 90, endValue: 120, style: { fill: '#ff8000', stroke: '#ff8000' }, endWidth: 13, startWidth: 10 }],
-//        labels: {interval: 10},     
-//        ticksMinor: { interval: 1, size: '5%' },
-//        ticksMajor: { interval: 5, size: '9%' },
-//        value: 0,
-//        colorScheme: 'scheme04',
-//        animationDuration: 1200,
-//        caption: {value: 'Котел, °C', position: 'bottom', visible: true}
-//    });
-//
-//    $('#gaugeBackway').jqxGauge({
-//        width: 340,
-//        height: 340,
-//        min: 20,
-//        max: 120,
-//        ranges: [{ startValue: 20, endValue: 50, style: { fill: '#0080ff', stroke: '#0080ff' }, endWidth: 5, startWidth: 1 },
-//                 { startValue: 50, endValue: 65, style: { fill: '#4bb648', stroke: '#4bb648' }, endWidth: 10, startWidth: 5 },
-//                 { startValue: 65, endValue: 120, style: { fill: '#ff8000', stroke: '#ff8000' }, endWidth: 13, startWidth: 10 }],
-//        labels: {interval: 10},     
-//        ticksMinor: { interval: 1, size: '5%' },
-//        ticksMajor: { interval: 5, size: '9%' },
-//        value: 0,
-//        colorScheme: 'scheme04',
-//        animationDuration: 1200,
-//        caption: {value: 'Обратка, °C', position: 'bottom', visible: true}
-//    });
-//
-//    $('#gaugeCirc').jqxGauge({
-//        width: 340,
-//        height: 340,
-//        min: 0,
-//        max: 100,
-//        ranges: [{ startValue: 0, endValue: 40, style: { fill: '#0080ff', stroke: '#0080ff' }, endWidth: 5, startWidth: 1 },
-//                 { startValue: 40, endValue: 80, style: { fill: '#4bb648', stroke: '#4bb648' }, endWidth: 10, startWidth: 5 },
-//                 { startValue: 80, endValue: 100, style: { fill: '#ff8000', stroke: '#ff8000' }, endWidth: 13, startWidth: 10 }],
-//        labels: {interval: 10},     
-//        ticksMinor: { interval: 1, size: '5%' },
-//        ticksMajor: { interval: 5, size: '9%' },
-//        value: 0,
-//        colorScheme: 'scheme04',
-//        animationDuration: 1200,
-//        caption: {value: 'Циркуляция, %', position: 'bottom', visible: true}
-//    });
-//
-//    $('#gaugePower').jqxGauge({
-//        width: 340,
-//        height: 340,
-//        min: 0,
-//        max: 100,
-//        ranges: [{ startValue: 0, endValue: 40, style: { fill: '#0080ff', stroke: '#0080ff' }, endWidth: 5, startWidth: 1 },
-//                 { startValue: 40, endValue: 80, style: { fill: '#4bb648', stroke: '#4bb648' }, endWidth: 10, startWidth: 5 },
-//                 { startValue: 80, endValue: 100, style: { fill: '#ff8000', stroke: '#ff8000' }, endWidth: 13, startWidth: 10 }],
-//        labels: {interval: 10},     
-//        ticksMinor: { interval: 1, size: '5%' },
-//        ticksMajor: { interval: 5, size: '9%' },
-//        value: 0,
-//        colorScheme: 'scheme04',
-//        animationDuration: 1200,
-//        caption: {value: 'Мощность, %', position: 'bottom', visible: true}
-//    });
-//
-//    $('#gaugeOutside').jqxLinearGauge({
-//        orientation: 'vertical',
-//        width: 100,
-//        height: 350,
-//        ticksMajor: { size: '10%', interval: 10 },
-//        ticksMinor: { size: '5%', interval: 2, style: { 'stroke-width': 1, stroke: '#aaaaaa'} },
-//        min: -40,
-//        max: 40,
-//        pointer: { size: '5%' },
-//        colorScheme: 'scheme05',
-//        labels: {position: 'both', interval: 10, formatValue: function (value, position) {
-//            if(value == -40 && position == 'near'){
-//                return '';
-//            }
-//            if (value == 40) {
-//                return '°C';
-//            }
-//            return value + '°';
-//        }
-//        },
-//        animationDuration: 1500
-//    });
 
     $$.get('http://boiler.kotbegemot/json_db.php',{nc: Math.random()},function(jsonText){
     //    alert(jsonText);
@@ -346,6 +261,8 @@ $$(document).on('refresh','#ptr_index',function(e){
 
 myApp.onPageInit('index', function (page) {
     
+    cur_page = 'index';
+    
     console.log('Index init');
     
     update();
@@ -356,7 +273,6 @@ myApp.onPageInit('index', function (page) {
 });
 
 $(window).on('resize',function(){
-//    update();
     update();
 });
 

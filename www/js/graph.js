@@ -6,6 +6,9 @@ var graph_params = {
 
 function update_graph(tm_min, tm_max, t_min, t_max) {
     
+    if(cur_page != 'graph')
+        return;
+    
     console.log("Start graph");
 
     var new_height = $(window).height()-100;
@@ -76,6 +79,8 @@ $$(document).on('refresh','#ptr_graph',function(e){
 });
 
 myApp.onPageInit('graph', function (page) {
+    
+    cur_page = 'graph';
     
     myApp.showPreloader();
     
